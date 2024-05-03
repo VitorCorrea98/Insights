@@ -10,7 +10,7 @@ class ProcessIndustries(ProcessJobs):
         lista_de_industries = [
             job["industry"]
             for job in self.jobs_list
-            if bool(job["industry"]) == True
+            if job["industry"] == True
         ]
         lista = list(set(lista_de_industries))
         return lista
