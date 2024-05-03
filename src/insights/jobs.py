@@ -7,8 +7,8 @@ class ProcessJobs:
         self.jobs_list = list()
 
     def read(self, path) -> List[Dict]:
-        with open(path, mode="r") as file:
-            reader = csv.DictReader(file)
+        with open(path, mode="r") as jobsFile:
+            reader = csv.DictReader(jobsFile)
             lista = list(reader)
             self.jobs_list = lista
 
@@ -24,5 +24,4 @@ class ProcessJobs:
             if job["industry"] == jobFilter["industry"]
             and job["job_type"] == jobFilter["job_type"]
         ]
-        print(jobsFiltered)
         return jobsFiltered
