@@ -17,5 +17,12 @@ class ProcessJobs:
         lista = list(set(lista_de_jobs))
         return lista
 
-    def filter_by_multiple_criteria(self) -> List[dict]:
-        pass
+    def filter_by_multiple_criteria(self, jobs, jobFilter) -> List[dict]:
+        jobsFiltered = [
+            job
+            for job in jobs
+            if job["industry"] == jobFilter["industry"]
+            and job["job_type"] == jobFilter["job_type"]
+        ]
+        print(jobsFiltered)
+        return jobsFiltered
