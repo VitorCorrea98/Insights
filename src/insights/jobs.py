@@ -18,10 +18,10 @@ class ProcessJobs:
         return lista
 
     def filter_by_multiple_criteria(self, jobs, jobFilter) -> List[dict]:
-        jobsFiltered = [
+        jobs_filtered = [
             job
             for job in jobs
             if job["industry"] == jobFilter["industry"]
             and job["job_type"] == jobFilter["job_type"]
         ]
-        return jobsFiltered
+        return jobs_filtered
